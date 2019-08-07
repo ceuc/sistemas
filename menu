@@ -1,0 +1,20 @@
+<table align='center'>
+<thead>
+<tr>
+	<th>Menu Principal</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>Usuarios</td>
+        <td><a title="usuarios" href="usuarios.php"><img src="img/usuarios2.jpg" alt="Usuarios" width="80px" height="80px"/></a></td>
+</tr>
+<tr>
+	<td>Cliente</td>
+        <td><a title="clientes" href="clientes.php"><img src="img/cliente.png" alt="Usuarios" width="80px" height="80px"/></a></td>
+</tr>
+<tr>
+	<td>Vendedores</td>
+        <td><a title="Vendedores" href="vendedores.php"><img src="img/vendedor.png" alt="Usuarios" width="80px" height="80px"/></a></td>
+</tr>
+</table>
