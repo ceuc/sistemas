@@ -1,0 +1,20 @@
+ <table align='center'>
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>&nbsp;</td>
+        <td><a title="Agregar" href="agregavende.php"><img src="img/Agregar.png" alt="Agregar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Modificar" href="usuarios.php"><img src="img/modificar.png" alt="Modificar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Eliminar" href="clientes.php"><img src="img/Eliminar.png" alt="Eliminar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Regresar" href="index.php"><img src="img/Regresar.png" alt="Regresar" width="50px" height="50px"/></a></td>
+</tr>
+
+</table>
+        
