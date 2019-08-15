@@ -1,0 +1,175 @@
+<?php
+		//session_start();
+		include('php_conexion.php'); 
+		$act="0";
+?>
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <html lang="es">
+    <head>
+        <meta charset="iso-8859-1">
+        <meta name="description" content="Ejemplo de HTML5">
+        <meta name="keywords" content="HTML5, CSS3, JavaScript">
+        <title>Agregar Vendedores</title>
+        <link rel="stylesheet" href="css/estilos.css">
+       <script type="text/javascript" src="js/codigo.js"></script
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+       
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="js/dhtmlxAjax.js"></script>
+        <script type="text/javascript" src="js/funciones.js"></script>
+    </head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+	background-image: url(img/fondoP.png);
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      table {
+    width: 550px;
+    border-collapse:collapse;
+    margin: auto;
+    background-color: #A4A4A4;
+    border: 2px solid black;
+    padding: 0;
+}
+table td {
+    position: relative;
+    text-align: center;
+    border: 2px solid green;
+    padding: 0;
+    margin: 0;
+}
+
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <body style-i="">
+        <header>
+            
+        </header> 
+        <script  type="text/javascript"></script>
+<script>
+ 
+</script>
+        <br>
+        <table align='center'>
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>&nbsp;</td>
+        <td><a title="Inicio" href="index.php"><img src="img/inicio.png" alt="Inicio" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="usuarios" href="usuarios.php"><img src="img/usuarios2.jpg" alt="Usuarios" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="clientes" href="clientes.php"><img src="img/cliente.png" alt="Usuarios" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Vendedores" href="vendedores.php"><img src="img/vendedor.png" alt="Usuarios" width="50px" height="50px"/></a></td>
+</tr>
+
+</table>
+        <br>  <br> <br> 
+        <h1>Agregar Vendedores</h1>
+            <table border='0' align='center'>
+                     
+    <tr>
+        <td>Nombre</td>
+        <td><input type="text" size="50" id="nom"/></td>
+        
+    </tr>
+    <tr>
+        <td>Dirección</td>
+        <td><input type="text" size="50" id="dir"/></td>
+        
+    </tr>
+    <tr>
+        <td>Telefono</td>
+        <td><input type="text" size="15" id="tel"/></td>
+        
+    </tr>
+    <tr>
+        <td>Comision</td>
+        <td><input type="text" size="5" id="com"/></td>
+        
+    </tr>
+ 
+            </table>
+        
+<br><br><br>
+  
+        <table align='center'>
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>&nbsp;</td>
+         <td><img src="img/Guardar.png" alt="Guardar" width="50px" height="50px" onclick="AddVendedor();"/></td>
+       
+        <td>&nbsp;</td>
+        <td><a title="Regresar" href="vendedores.php"><img src="img/volver.png" alt="Regresar" width="50px" height="50px"/></a></td>
+</tr>
+
+</table>
+<div id="dival" class="alert alert-warning alert-dismissable" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
+                    Campos Obligatorios: Nombre de la Iglesia/Instituci&oacute;n, Direcci&oacute;n, Nombre del Pastor
+                </div>
+                <div id="divalg" class="alert alert-warning alert-dismissable" style="display: none;">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-warning"></i> Aviso!</h4>
+                    Error al guardar
+                </div>
+        
+         <footer>
+            Derechos Reservados &copy; Sistemas CEUC 2019
+        </footer>
+        <input type="hidden"  id="rowsel" value="0" >
+        <script type="text/javascript">
+            
+</script>
+    </body>
+</html>
+
+
