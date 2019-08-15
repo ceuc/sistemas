@@ -1,0 +1,51 @@
+function AddVendedor()
+            {
+               var nom = "";
+               var dir = "";
+               var com = "";
+               var tel = "";
+               
+               var id="";
+               
+               var parametros="";
+                if(document.getElementById("nom").value=="" || document.getElementById("dir").value=="" || document.getElementById("tel").value==""  ){
+                   document.getElementById("dival").style.display = "block";
+                   setInterval('document.getElementById("dival").style.display = "none";',8000);
+                   
+                   return;
+                }
+                else{
+                    if(document.getElementById("rowsel").value=="" || document.getElementById("rowsel").value=="undefined"){
+                        id="0";
+                        
+                    }else{
+                        id=document.getElementById("rowsel").value;
+                    }
+                    nom =  document.getElementById("nom").value;
+                    dir =  document.getElementById("dir").value;
+                    com =  document.getElementById("com").value;
+                    tel =  document.getElementById("tel").value;
+                    
+
+                    dhtmlxAjax.post("Gvendedor.php?nom="+nom+"&dir="+dir+"&com="+com+"&tel="+tel+"&id="+id,parametros,respuestaAddvende);
+
+                }
+            }
+ function respuestaAddvende(loader){
+
+                if(loader.xmlDoc!=null)
+                {
+                   var res = loader.xmlDoc.responseText;
+
+                   if(res != 0){
+                       //alert(res);
+                           // mygrid.loadXML("Conscoun.php");
+                         location.href="vendedores.php";
+                    }else{
+                        //alert("Error al guardar el rol");
+                        document.getElementById("divalg").style.visibility = "block";
+                     }
+
+                }
+
+            }
