@@ -1,0 +1,46 @@
+<?php
+session_start();
+include("php_conexion.php");
+
+$nom= $_GET['nom'];
+$dir= $_GET['dir'];
+$com= $_GET['com'];
+$tel= $_GET['tel'];
+
+
+$Id =  $_GET['id'];
+$str="";
+$str2="";
+ if ( isset ( $_SESSION['id'] ) ) {
+         $usr_id  = $_SESSION['id'];
+
+     } else {
+         header("Location:index.php");
+     }
+$ip = $_SERVER['REMOTE_ADDR'];
+$url =$_SERVER['PHP_SELF'];
+if (!isset($GLOBALS["carateres_latinos"])){
+      $todas = get_html_translation_table(HTML_ENTITIES, ENT_NOQUOTES);
+      $etiquetas = get_html_translation_table(HTML_SPECIALCHARS, ENT_NOQUOTES);
+      $GLOBALS["carateres_latinos"] = array_diff($todas, $etiquetas);
+   }
+            
+   
+     if ( $Id == 0 ) {
+           
+             $var_consulta= "insert into vendedor (nom_vendedor,direccion,telefono,comision) values ('$nom','$dir','$tel','$com')";
+             $var_resultado = $obj_conexion->query($var_consulta);
+           
+           print"1";
+     }
+     if ( $Id > 0 ){
+
+             $sqlStr="UPDATE vendedor set nom_vendedor='$nom',direccion='$dir',comision='$com',telefono='$tel' where id=$Id";            
+             $var_resultado = $obj_conexion->query($sqlStr);
+             
+             print"1";
+
+     }
+    mysql_close($link);
+
+
