@@ -1,0 +1,168 @@
+<?php
+		//session_start();
+		include('php_conexion.php'); 
+		$act="0";
+?>
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <html lang="es">
+    <head>
+        <meta charset="iso-8859-1">
+        <meta name="description" content="Ejemplo de HTML5">
+        <meta name="keywords" content="HTML5, CSS3, JavaScript">
+        <title>Vendedores</title>
+        <link rel="stylesheet" href="css/estilos.css">
+       <script type="text/javascript" src="js/codigo.js"></script
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+       
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    </head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+	background-image: url(img/fondoP.png);
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <body style-i="">
+        <header>
+            
+        </header> 
+        <script  type="text/javascript"></script>
+<script>
+ 
+</script>
+        <br>
+        <table align='center'>
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>&nbsp;</td>
+        <td><a title="Inicio" href="index.php"><img src="img/inicio.png" alt="Inicio" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="usuarios" href="usuarios.php"><img src="img/usuarios2.jpg" alt="Usuarios" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="clientes" href="clientes.php"><img src="img/cliente.png" alt="Usuarios" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Vendedores" href="vendedores.php"><img src="img/vendedor.png" alt="Usuarios" width="50px" height="50px"/></a></td>
+</tr>
+
+</table>
+        <br>  <br> <br> 
+        <h1>Vendedores</h1>
+            <table border='1' align='center'>
+                    <tr bgcolor='blue'>
+                                  
+                </tr>
+                   
+                    <tr>
+                   <?php
+        $var_consulta2= "select * from vendedor";
+        $var_resultado2 = $obj_conexion->query($var_consulta2);
+
+        if($var_resultado2->num_rows>0)
+          {
+            echo"<table border='1' align='center'>
+             <tr bgcolor='#E6E6E6'>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Comision</th>
+                <th>Fecha</th>
+            </tr>";
+
+        while ($var_fila2=$var_resultado2->fetch_array())
+        {
+            echo "<tr>
+            <td>".$var_fila2["id_vendedor"]."</td>";
+            echo "<td>".$var_fila2["nom_vendedor"]."</td>";
+            echo "<td>".$var_fila2["direccion"]."</td>";
+            echo "<td>".$var_fila2["telefono"]."</td>";
+            echo "<td>".$var_fila2["comision"]."</td>";
+            echo "<td>".$var_fila2["fecha"]."</td></tr>";
+
+         }
+        }
+        else
+          {
+            echo "No hay Registros";
+
+          }
+        ?>             
+                </tr>
+            </table>
+        
+<br><br><br>
+  
+        <table align='center'>
+<thead>
+<tr>
+	<th>&nbsp;</th>
+	<th> </th>
+</tr>
+</thead>
+<tr>
+	<td>&nbsp;</td>
+        <td><a title="Agregar" href="agregavende.php"><img src="img/Agregar.png" alt="Agregar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Modificar" href="usuarios.php"><img src="img/modificar.png" alt="Modificar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Eliminar" href="clientes.php"><img src="img/Eliminar.png" alt="Eliminar" width="50px" height="50px"/></a></td>
+        <td>&nbsp;</td>
+        <td><a title="Regresar" href="index.php"><img src="img/Regresar.png" alt="Regresar" width="50px" height="50px"/></a></td>
+</tr>
+
+</table>
+        
+         <footer>
+            Derechos Reservados &copy; Sistemas CEUC 2019
+        </footer>
+        
+        <script type="text/javascript">
+
+</script>
+    </body>
+</html>
+
